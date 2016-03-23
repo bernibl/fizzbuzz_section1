@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var count, replace;
+
+count = function(start, end){
+	var output = "";
+	for (i = start; i <= end; i++) {
+		output += replace(i);
+	}
+	return output;
+};
+
+
+
+replace = function(i){
+ 
+	if(i % 15 === 0) {
+		return "fizzbuzz ";
+	} else if(i % 3 === 0) {
+		return "fizz ";
+	} else if(i % 5 === 0) {
+		return "buzz ";
+	} else 
+		return (i + " ");
+};	
+
+module.exports = {
+	replace: replace,
+	count: count
+};
